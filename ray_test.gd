@@ -34,10 +34,14 @@ var lastPoint;
 
 func _ready():
 	world = get_parent()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	set_process_input(true)
 	set_process(true)
 
-func _input(event):
+func _input(event):	
+	if Input.is_action_pressed("cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
 	if Input.is_action_pressed("move_objects"):
 		ray.rotation = Vector3(0,0,0)
 		#rayLight.
@@ -84,9 +88,17 @@ func _physics_process(delta):
 	# right left direct movement
 	# velocity.y += GRAVITY * delta
 	var desired_velocity = get_input() * SPEED
+	var head_basis = controller.get_global_transform().basis
 
 	velocity.x = desired_velocity.x
 	velocity.z = desired_velocity.z
+
+	if Input.is_action_pressed("higher"):
+		velocity -= head_basis.y
+	elif Input.is_action_pressed("lower"):
+		velocity += head_basis.y
+	else:
+		velocity = Vector3(velocity.x,0,velocity.z)
 
 	velocity = move_and_slide(velocity, Vector3.UP, true)
 
