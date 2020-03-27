@@ -17,7 +17,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 [node name="level" type="Spatial"]
 
 [node name="plane" type="StaticBody" parent="."]
-transform = Transform( 13.431, 0, 0, 0, 0.0977546, 0, 0, 0, 15.6494, 0, 0.145526, 0 )
+transform = Transform( 126.686, 0, 0, 0, 0.0977546, 0, 0, 0, 89.3335, 0, 0.145526, 0 )
 __meta__ = {
 "_edit_group_": true
 }
