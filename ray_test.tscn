@@ -17,7 +17,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 [node name="level" type="Spatial"]
 
 [node name="plane" type="StaticBody" parent="."]
-transform = Transform( 126.686, 0, 0, 0, 0.0977546, 0, 0, 0, 89.3335, 0, 0.145526, 0 )
+transform = Transform( 35.7328, 0, 0, 0, 0.0977546, 0, 0, 0, -37.4841, 0, 0.145526, 0 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -38,7 +38,10 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.0357, 14.6027 )
 
 [node name="block" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35101, 0 )
 
 [node name="placer" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30221, -3.88294 )
 
 [node name="carrier" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34104, 3.68138 )
