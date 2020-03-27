@@ -1,8 +1,9 @@
 extends KinematicBody
 
-onready var ray = get_node("/root/level/controller/RayCast")
-onready var rayLight = get_node("/root/level/controller/Spotlight")
-onready var camera = get_node("/root/level/controller")
+onready var ray = get_node("/root/level/controller/Camera/RayCast")
+onready var rayLight = get_node("/root/level/controller/Camera/RayCast/Spotlight")
+onready var controller = get_node("/root/level/controller")
+onready var camera = get_node("/root/level/controller/Camera")
 onready var placer = get_node("/root/level/placer")
 onready var carrier = get_node("/root/level/carrier")
 
@@ -59,7 +60,7 @@ func _input(event):
 			lastPoint.z
 		)
 		
-	if event is InputEventMouseMotion and moving:
+	if event is InputEventMouseMotion:
 		ray.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
 
 		# stop the mouse movement from passing 90 digrees for a more fluid control system
