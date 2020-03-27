@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ray_test.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="controller" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 4.65534 )
+script = ExtResource( 1 )
+
+[node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, -17.741 )
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+collide_with_areas = true
+
+[node name="SpotLight" type="SpotLight" parent="RayCast"]
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0 )
+light_color = Color( 0.917647, 0.843137, 0.843137, 1 )
+light_energy = 9.69
+spot_range = 28.6
+spot_angle = 1.0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
+current = true
